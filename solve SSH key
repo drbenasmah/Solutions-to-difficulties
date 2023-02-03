@@ -1,0 +1,33 @@
+This error message is indicating that you need to add a public SSH key to your GitHub account in order to clone a repository over SSH. Here's how to solve it:
+
+Generate a new SSH key: If you don't already have an SSH key, you can generate one by running the following command in your terminal:
+
+
+Copy code
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Replace "your_email@example.com" with your actual email address.
+
+Add your public key to GitHub: After generating the key, you can add it to your GitHub account by following these steps:
+
+Open the terminal and run the following command to display your public key:
+
+Copy code
+cat ~/.ssh/id_rsa.pub
+Copy the output of this command.
+
+Log in to your GitHub account and go to the "Settings" page.
+
+Click on "SSH and GPG keys" on the left-side menu.
+
+Click on the "New SSH key" button.
+
+Give your key a descriptive title, paste the public key into the "Key" field, and then click the "Add SSH key" button.
+
+Clone the repository over SSH: After adding your public key to GitHub, you should now be able to clone the repository over SSH. You can do this by running the following command in your terminal:
+
+bash
+Copy code
+git clone git@github.com:user/repo.git
+Replace "user/repo" with the actual repository you want to clone.
+
+That's it! You should now be able to clone the repository without encountering the "You don't have any public SSH keys in your GitHub account" error message.
