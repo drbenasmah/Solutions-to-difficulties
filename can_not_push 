@@ -1,0 +1,18 @@
+git fetch
+git merge origin/master
+
+error: failed to push some refs to 'https://github.com/drbenasmah/alx-low_level_programming.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details."
+The error message you're encountering, "! [rejected] master -> master (non-fast-forward)," indicates that the push you're attempting to make would overwrite Git history on the remote repository. This is usually prevented by Git to prevent accidental loss of data.
+
+To resolve this error, you need to first synchronize your local repository with the remote repository. You can do this by pulling the latest changes from the remote repository to your local repository. Here's how you can do this:
+
+Fetch the latest changes from the remote repository: git fetch origin
+Merge the remote changes into your local repository: git merge origin/master
+Resolve any conflicts if necessary.
+Commit the merged changes: git commit -m "Merge remote changes"
+Push the changes to the remote repository: git push origin master
+If you prefer to overwrite the remote repository with your local repository, you can use the -f or --force flag with git push, but this should be done with caution as it can permanently destroy the remote repository's Git history. To use the -f flag, run the following command: git push -f origin master
